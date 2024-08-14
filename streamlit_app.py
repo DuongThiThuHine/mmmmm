@@ -16,8 +16,7 @@ df.info(buf=buffer)
 s = buffer.getvalue()
 st.text(s)
 
-df[df.duplicated()] # xem dữ liệu trùng
-
+st.markdown("<h1 style='text-align: center; color: blue;'>Describe 3 Column of Data</h1>", unsafe_allow_html=True)
 st.write(df.describe())
 
 df.isnull().sum()
