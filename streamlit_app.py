@@ -260,8 +260,6 @@ def visualize_related(related_counts, top_n=10):
     st.pyplot(plt)
     plt.clf()  # Clear the figure after displaying to prevent overlap
 
-
-def main():
     # Function to analyze gender ratio
 def gender_ratio(df):
     gender_counts = df['Gender'].value_counts()
