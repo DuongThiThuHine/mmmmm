@@ -109,15 +109,7 @@ def visualize_data(df, columns):
         plt.show()
 
 # Function to analyze gender ratio
-def gender_ratio(df):
-    gender_counts = df['Gender'].value_counts()
-    total_cases = len(df)
-    male_ratio = gender_counts.get('Male', 0) / total_cases * 100
-    female_ratio = gender_counts.get('Female', 0) / total_cases * 100
-    st.write(f"Male: {male_ratio:.2f}%")
-    st.write(f"Female: {female_ratio:.2f}%")
-    return male_ratio, female_ratio
-gender_ratio(df)
+
 
 # Vẽ biểu đồ sử dụng Matplotlib
 
