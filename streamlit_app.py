@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import io
+from sklearn.preprocessing import MinMaxScaler
 
 st.title("Data Analysis about Vietnamcovid for Web App")
 # Đọc tệp CSV với mã hóa 'latin1'
