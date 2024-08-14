@@ -137,15 +137,7 @@ def visualize_gender_ratio(male_ratio, female_ratio):
     st.pyplot(plt)
     plt.clf()  # Clear the figure after displaying to prevent overlap
 
-# Main Streamlit app
-def main():
-    st.title("Gender Ratio Visualization of COVID-19 Cases")
 
-    male_ratio, female_ratio = gender_ratio(df)
-    visualize_gender_ratio(male_ratio, female_ratio)
-
-if __name__ == "__main__":
-    main()
 
 
 
@@ -298,3 +290,12 @@ def visualize_related(related_counts, top_n=10):
 
 # Use the function visualize_related
 visualize_related(related_counts, top_n=10)
+# Main Streamlit app
+def main():
+    st.title("Gender Ratio Visualization of COVID-19 Cases")
+
+    male_ratio, female_ratio = gender_ratio(df)
+    visualize_gender_ratio(male_ratio, female_ratio)
+
+if __name__ == "__main__":
+    main()
