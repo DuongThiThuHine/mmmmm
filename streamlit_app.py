@@ -260,13 +260,36 @@ def visualize_related(related_counts, top_n=10):
     st.pyplot(plt)
     plt.clf()  # Clear the figure after displaying to prevent overlap
 
-# Use the function visualize_related
-visualize_related(related_counts, top_n=10)
-# Main Streamlit app
 
+def main():
+    # Function to analyze gender ratio
+def gender_ratio(df):
+    gender_counts = df['Gender'].value_counts()
+    total_cases = len(df)
+    male_ratio = gender_counts.get('Male', 0) / total_cases * 100
+    female_ratio = gender_counts.get('Female', 0) / total_cases * 100
+    st.write(f"Male: {male_ratio:.2f}%")
+    st.write(f"Female: {female_ratio:.2f}%")
+    return male_ratio, female_ratio
+gender_ratio(df)
+
+# Vẽ biểu đồ sử dụng Matplotlib
+
+# Function to visualize gender ratio using Streamlit
+def visualize_gender_ratio(male_ratio, female_ratio):
+    labels = ['Male', 'Female']
+    sizes = [male_ratio, female_ratio]
+    colors = ['lightblue', 'lightpink']
+    explode = (0.1, 0)  # explode the 1st slice (Male)
+    
+    plt.figure(figsize=(10, 6))
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.title('Gender Ratio of COVID-19 Cases')
+    st.pyplot(plt)
     plt.clf()  # Clear the figure after displaying to prevent overlap
 
-
+# Main Streamlit app
 def main():
     st.title("Gender Ratio Visualization of COVID-19 Cases")
 
