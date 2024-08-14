@@ -80,8 +80,6 @@ def remove_outliers(df, column):
     df_cleaned = df[~((df[column] < (Q1 - 1.5 * IQR)) | (df[column] > (Q3 + 1.5 * IQR)))]
     return df_cleaned
 
-from sklearn.preprocessing import MinMaxScaler
-
 def normalize_data(df, columns):
     scaler = MinMaxScaler()
     df[columns] = scaler.fit_transform(df[columns])
