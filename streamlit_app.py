@@ -92,15 +92,8 @@ def encode_categorical(df, columns):
 def feature_engineering(df):
     df['Total Value'] = df['Quantity'] * df['Price']
     return df
-from sklearn.model_selection import train_test_split
 
-def split_data(df, target, test_size=0.2, random_state=42):
-    X = df.drop(columns=[target])
-    y = df[target]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
-    return X_train, X_test, y_train, y_test
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 def visualize_data(df, columns):
     for column in columns:
@@ -108,7 +101,7 @@ def visualize_data(df, columns):
         sns.histplot(df[column], kde=True)
         plt.title(f'Distribution of {column}')
         plt.show()
-import pandas as pd
+
 
 # Function to analyze gender ratio
 def gender_ratio(df):
