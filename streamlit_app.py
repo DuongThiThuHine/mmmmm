@@ -135,11 +135,13 @@ def visualize_gender_ratio(male_ratio, female_ratio):
 
 # Function to analyze locations
 def analyze_locations(df):
+    st.write('Location Counts')
     location_counts = df['Location'].value_counts()
 
     st.write(location_counts)
     return location_counts
 location_counts = analyze_locations(df)
+
 
 # Function to visualize locations using Matplotlib for more control
 def visualize_locations_bar_chart(location_counts, top_n=10):
