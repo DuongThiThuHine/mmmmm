@@ -81,7 +81,6 @@ def remove_outliers(df, column):
     df_cleaned = df[~((df[column] < (Q1 - 1.5 * IQR)) | (df[column] > (Q3 + 1.5 * IQR)))]
     return df_cleaned
 
-from sklearn.preprocessing import MinMaxScaler
 
 def normalize_data(df, columns):
     scaler = MinMaxScaler()
@@ -93,7 +92,6 @@ def encode_categorical(df, columns):
 def feature_engineering(df):
     df['Total Value'] = df['Quantity'] * df['Price']
     return df
-from sklearn.model_selection import train_test_split
 
 def split_data(df, target, test_size=0.2, random_state=42):
     X = df.drop(columns=[target])
@@ -109,7 +107,6 @@ def visualize_data(df, columns):
         sns.histplot(df[column], kde=True)
         plt.title(f'Distribution of {column}')
         plt.show()
-import pandas as pd
 
 # Function to analyze gender ratio
 def gender_ratio(df):
