@@ -145,6 +145,7 @@ location_counts = analyze_locations(df)
 
 # Function to visualize locations using Matplotlib for more control
 def visualize_locations_bar_chart(location_counts, top_n=10):
+    st.markdown("<h1 style='text-align: center; color: blue;'>Top Locations by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
     top_locations = location_counts.head(top_n)
     top_locations_df = top_locations.reset_index()  # Convert to DataFrame
     top_locations_df.columns = ['Location', 'Number of Cases']  # Rename columns
