@@ -178,7 +178,7 @@ visualize_locations_bar_chart(location_counts, top_n=10)
 
 # Function to analyze nationalities
 def analyze_nationalities(df):
-      st.markdown("<h1 style='text-align: center; color: blue;'>Top Nationalities by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: blue;'>Top Nationalities by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
     nationality_counts = df['Nationality'].value_counts()
     return nationality_counts
 
