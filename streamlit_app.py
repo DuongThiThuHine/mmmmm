@@ -16,6 +16,7 @@ df.info(buf=buffer)
 s = buffer.getvalue()
 st.text(s)
 
+st.markdown("<h1 style='text-align: center; color: blue;'>View duplicate data</h1>", unsafe_allow_html=True)
 df[df.duplicated()]
 
 st.markdown("<h1 style='text-align: center; color: blue;'>Describe 3 Column of Data</h1>", unsafe_allow_html=True)
@@ -129,6 +130,11 @@ def visualize_gender_ratio(male_ratio, female_ratio):
     plt.title('Gender Ratio of COVID-19 Cases')
     st.pyplot(plt)
     plt.clf()  # Clear the figure after displaying to prevent overlap
+
+    st.title("Gender Ratio Visualization of COVID-19 Cases")
+
+    male_ratio, female_ratio = gender_ratio(df)
+    visualize_gender_ratio(male_ratio, female_ratio)
 
 
 
