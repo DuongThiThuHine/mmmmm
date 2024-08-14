@@ -174,6 +174,7 @@ nationality_counts = analyze_nationalities(df)
 
 # Function to visualize nationalities as a column chart with multiple colors
 def visualize_nationalities_bar_chart(nationality_counts, top_n=10):
+    st.markdown("<h1 style='text-align: center; color: blue;'>Top Nationalities by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
     top_nationalities = nationality_counts.head(top_n)
     top_nationalities_df = top_nationalities.reset_index()
     top_nationalities_df.columns = ['Nationality', 'Number of Cases']
@@ -200,6 +201,7 @@ status_counts = analyze_statuses(df)
 
 # Function to visualize statuses as a horizontal bar chart with multiple colors
 def visualize_statuses(status_counts):
+    st.markdown("<h1 style='text-align: center; color: blue;'>COVID-19 Case Statuses</h1>", unsafe_allow_html=True)
     plt.figure(figsize=(12, 8))
     colors = plt.cm.Paired(range(len(status_counts)))  # Use a colormap to generate different colors
     status_counts.plot(kind='barh', color=colors)
@@ -231,6 +233,7 @@ source_counts = analyze_sources(df)
 
 # Function to visualize sources as a horizontal bar chart with multiple colors
 def visualize_sources(source_counts, top_n=10):
+    st.markdown("<h1 style='text-align: center; color: blue;'>Top Sources of COVID-19 Infections</h1>", unsafe_allow_html=True)
     if source_counts.empty:
         st.warning("No source data available to visualize.")
         return
@@ -268,6 +271,7 @@ related_counts = analyze_related(df)
 
 # Function to visualize related contacts as a column chart
 def visualize_related(related_counts, top_n=10):
+    st.markdown("<h1 style='text-align: center; color: blue;'>Top Related Contacts of COVID-19 Infections</h1>", unsafe_allow_html=True)
     if related_counts.empty:
         st.warning("No related contact data available to visualize.")
         return
