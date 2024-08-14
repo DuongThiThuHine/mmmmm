@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 st.title("Data Analysis about Vietnamcovid for Web App")
 # Đọc tệp CSV với mã hóa 'latin1'
-st.markdown("<h1 style='text-align: center; color: blue;'>Read data from file csv</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Read data from file csv</h1>", unsafe_allow_html=True)
 df = pd.read_csv('vietnamcovid.csv', encoding='latin1')
 st.write(df)
 st.write('Data info of columns')
@@ -15,9 +15,9 @@ buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
 st.text(s)
-st.markdown("<h1 style='text-align: center; color: blue;'>View duplicate data</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>View duplicate data</h1>", unsafe_allow_html=True)
 df[df.duplicated()] # xem dữ liệu trùng
-st.markdown("<h1 style='text-align: center; color: blue;'>Describe 3 Column of Data</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Describe 3 Column of Data</h1>", unsafe_allow_html=True)
 st.write(df.describe())
 
 df.isnull().sum()
@@ -149,7 +149,7 @@ if __name__ == "__main__":
 
 # Function to analyze locations
 def analyze_locations(df):
-    st.markdown("<h1 style='text-align: center; color: blue;'>Location counts</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>Location counts</h1>", unsafe_allow_html=True)
     location_counts = df['Location'].value_counts()
     st.write(location_counts)
     return location_counts
@@ -179,7 +179,7 @@ visualize_locations_bar_chart(location_counts, top_n=10)
 
 # Function to analyze nationalities
 def analyze_nationalities(df):
-    st.markdown("<h1 style='text-align: center; color: blue;'>Top Nationalities by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>Top Nationalities by Number of COVID-19 Cases</h1>", unsafe_allow_html=True)
     nationality_counts = df['Nationality'].value_counts()
     return nationality_counts
 
@@ -205,7 +205,7 @@ visualize_nationalities_bar_chart(nationality_counts, top_n=10)
 
 # Function to analyze statuses
 def analyze_statuses(df):
-    st.markdown("<h1 style='text-align: center; color: blue;'>COVID-19 Case Statuses</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>COVID-19 Case Statuses</h1>", unsafe_allow_html=True)
     status_counts = df['status'].value_counts()
     st.write(status_counts)
     return status_counts
@@ -229,7 +229,7 @@ visualize_statuses(status_counts)
 
 # Function to analyze sources
 def analyze_sources(df):
-    st.markdown("<h1 style='text-align: center; color: blue;'>Top Sources of COVID-19 Infections</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>Top Sources of COVID-19 Infections</h1>", unsafe_allow_html=True)
     source_counts = df['Source'].value_counts()
     st.write(source_counts)
     return source_counts
@@ -283,7 +283,7 @@ related_counts = analyze_related(df)
 
 # Function to visualize related contacts as a column chart
 def visualize_related(related_counts, top_n=10):
-    st.markdown("<h1 style='text-align: center; color: blue;'>Top Related Contacts of COVID-19 Infections</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>Top Related Contacts of COVID-19 Infections</h1>", unsafe_allow_html=True)
     if related_counts.empty:
         st.warning("No related contact data available to visualize.")
         return
