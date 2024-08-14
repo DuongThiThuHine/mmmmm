@@ -3,5 +3,3 @@ Pillow
 streamlit
 pandas
 seaborn
-matplotlib
-io
